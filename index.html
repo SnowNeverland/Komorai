@@ -28,6 +28,31 @@
     nav a.active{background:#fff;color:#000}
     nav a:not(.active):hover{background:rgba(255,255,255,.08)}
 
+    /* ===== MENU RESPONSIVE (ajout) ===== */
+    .hamburger{display:none;font-size:28px;cursor:pointer;user-select:none;color:#fff}
+    @media (max-width: 768px){
+      .hamburger{display:block}
+      nav{
+        display:none;
+        position:absolute;
+        top:72px; right:24px;
+        background:rgba(0,0,0,.9);
+        border:1px solid var(--line);
+        border-radius:var(--radius);
+        padding:14px 18px;
+        flex-direction:column;
+        gap:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,.5);
+        z-index:999;
+      }
+      nav.show{display:flex}
+      nav a{
+        display:block;width:100%;padding:10px 0;margin-left:0;
+        border-bottom:1px solid rgba(255,255,255,.1);
+      }
+      nav a:last-child{border-bottom:none}
+    }
+
     /* Hero */
     .hero{position:relative;min-height:86vh;display:grid;place-items:center;text-align:center;overflow:hidden}
     .hero-inner{padding:40px 20px}
@@ -72,17 +97,8 @@
       gap: 40px;
       flex-wrap: nowrap;
     }
-
-    footer .footer-column {
-      flex: 1 1 0;
-      min-width: 220px;
-    }
-
-    @media (max-width: 768px) {
-      footer .footer-columns {
-        flex-wrap: wrap;
-      }
-    }
+    footer .footer-column { flex: 1 1 0; min-width: 220px; }
+    @media (max-width: 768px) { footer .footer-columns { flex-wrap: wrap; } }
   </style>
 </head>
 
@@ -94,7 +110,11 @@
           <img src="images/Komoraï.svg" alt="Logo Komoraï Voyance">
         </a>
       </div>
-      <nav>
+
+      <!-- Bouton hamburger (uniquement en petit écran) -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <nav id="nav">
         <a href="index.html" class="active">Accueil</a>
         <a href="cartes-pendule.html">Cartes & Pendule</a>
         <a href="tarifs.html">Tarifs</a>
@@ -170,16 +190,16 @@
         <h3>Contacts</h3>
         <ul>
           <li>📞 +33 6 70 36 61 00</li>
-          <li>✉️ studio.komorai@gmail.com</li>
+          <li>✉️ <a href="mailto:studio.komrai@gmail.com">studio.komrai@gmail.com</a></li>
           <li>🏛️ SIREN : 991665555</li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Réseaux sociaux</h3>
         <ul>
-          <li><a href="#">Instagram</a>komorai_</li>
-          <li><a href="#">Facebook</a>komoraï</li>
-          <li><a href="#">WhatsApp</a>Contact direct</li>
+          <li><a href="https://instagram.com/komorai_" target="_blank" rel="noreferrer">@komorai_</a></li>
+          <li><a href="https://www.facebook.com/share/1Ab636pRdb/" target="_blank" rel="noreferrer">/Komoraï</a></li>
+          <li><a href="" target="_blank" rel="noreferrer">WhatsApp — Contact direct</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -196,6 +216,10 @@
   </footer>
 
   <script>
+    // Menu mobile
+    function toggleMenu(){ document.getElementById('nav').classList.toggle('show'); }
+
+    // Reveal on scroll
     const obs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
     },{threshold:.12});
