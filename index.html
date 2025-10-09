@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Komoraï Voyance — Accueil</title>
+  <meta name="description" content="Voyance élégante et bienveillante : Oracle de Gé, autres oracles et pendule. Réservations en ligne — Komoraï Voyance."/>
+  <meta property="og:title" content="Komoraï Voyance"/>
+  <meta property="og:description" content="Guidance claire, énergie douce : Oracle de Gé & pendule."/>
+  <meta property="og:type" content="website"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/Komoraï.svg">
+
+  <style>
+    :root{--bg:#000;--ink:#fff;--muted:#d8d8d8;--line:rgba(255,255,255,.14);--card:#0b0b0b;--radius:22px}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--ink);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:150px;display:block}
+    nav a{margin-left:14px;padding:10px 14px;border-radius:999px;border:1px solid transparent}
+    nav a.active{background:#fff;color:#000}
+    nav a:not(.active):hover{background:rgba(255,255,255,.08)}
+
+    /* Hero */
+    .hero{position:relative;min-height:86vh;display:grid;place-items:center;text-align:center;overflow:hidden}
+    .hero-inner{padding:40px 20px}
+    h1{font-family:'Playfair Display',serif;font-size:3.2rem;line-height:1.1;margin:0 0 14px}
+    .lead{max-width:780px;margin:0 auto;color:var(--muted);font-size:1.18rem;line-height:1.7}
+    .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:12px 22px;border-radius:999px;font-weight:600;border:1px solid #fff}
+    .btn.ghost{background:transparent;color:#fff;border-color:var(--line)}
+
+    /* Decorative orb */
+    .orb{position:absolute;inset:auto auto 8% 50%;transform:translateX(-50%);width:min(560px,90vw);pointer-events:none;opacity:.9;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+    .orb .glow{filter:blur(22px);opacity:.35}
+    .float{animation:float 10s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-18px)}}
+
+    /* Sections */
+    .section{padding:56px 0}
+    .grid{display:grid;gap:22px}
+    .two{grid-template-columns:1.2fr .8fr;align-items:center}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+    .kicker{letter-spacing:.18em;text-transform:uppercase;color:#cfcfcf;font-size:12px}
+    .title{font-family:'Playfair Display',serif;font-size:2rem;margin:6px 0 10px}
+    .text{color:#d7d7d7;line-height:1.7}
+    .list{color:#e8e8e8;line-height:1.8;padding-left:18px}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(14px)}
+    .reveal.show{opacity:1;transform:none;transition:opacity .55s ease, transform .55s ease}
+
+    /* Footer preview band */
+    .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;color:#bdbdbd;font-size:14px;text-align:center}
+
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+      h1{font-size:2.2rem}
+    }
+
+    footer .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: nowrap;
+    }
+
+    footer .footer-column {
+      flex: 1 1 0;
+      min-width: 220px;
+    }
+
+    @media (max-width: 768px) {
+      footer .footer-columns {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container row">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/Komoraï.svg" alt="Logo Komoraï Voyance">
+        </a>
+      </div>
+      <nav>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="cartes-pendule.html">Cartes & Pendule</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <svg class="orb float" viewBox="0 0 600 600" aria-hidden="true">
+      <defs>
+        <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="300" cy="320" r="220" fill="url(#orb)" class="glow"/>
+      <circle cx="300" cy="300" r="180" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+      <circle cx="300" cy="300" r="140" fill="none" stroke="rgba(255,255,255,.12)"/>
+      <circle cx="300" cy="300" r="100" fill="none" stroke="rgba(255,255,255,.08)"/>
+    </svg>
+
+    <div class="hero-inner reveal">
+      <div class="kicker">Guidance claire • Énergie douce</div>
+      <h1>La clarté au cœur du mystère</h1>
+      <p class="lead">Spécialisée dans l’<strong>Oracle de Gé</strong> et le <strong>pendule</strong>, j’accompagne vos décisions avec une voyance
+        <em>éthique</em>, précise et bienveillante. Des messages limpides, des conseils concrets, et un suivi possible pour
+        vous aider à avancer sereinement.</p>
+      <div class="cta">
+        <a class="btn" href="contact.html">Prendre rendez-vous</a>
+        <a class="btn ghost" href="tarifs.html">Voir les tarifs</a>
+        <a class="btn ghost" href="cartes-pendule.html">Découvrir ma méthode</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid two">
+      <div class="reveal">
+        <div class="kicker">Présentation</div>
+        <h2 class="title">Je suis Komoraï — votre guide, pas votre oracle absolu</h2>
+        <p class="text">Ma pratique est <strong>claire</strong> et <strong>structurée</strong>. Chaque séance devient un espace sûr où l’on met de la
+          lumière sur vos questions essentielles (affectif, professionnel, projets). Je privilégie des messages utiles,
+          des perspectives <em>actionnables</em> et un <strong>suivi</strong> quand vous en ressentez le besoin. L’objectif : que vous
+          repartiez confiant·e, avec des <strong>prochaines étapes</strong> réalistes.</p>
+        <ul class="list">
+          <li>Tirages adaptés à votre situation (Oracle de Gé + autres jeux)</li>
+          <li>Complément au <strong>pendule</strong> pour des réponses nettes (oui/non/tendance)</li>
+          <li>Déontologie claire : respect, confidentialité, aucune promesse irréaliste</li>
+        </ul>
+        <div class="cta" style="justify-content:flex-start;margin-top:14px">
+          <a class="btn" href="contact.html">Réserver une séance</a>
+          <a class="btn ghost" href="cartes-pendule.html">Cartes & Pendule</a>
+        </div>
+      </div>
+      <aside class="card reveal" aria-label="Mise en avant visuelle">
+        <div class="kicker">Signature</div>
+        <h3 class="title" style="margin-top:6px">Oracle de Gé</h3>
+        <p class="text">Un oracle franc et visuel pour éclairer vos choix. Tirages croisés, lignes temporelles et conseils.
+          Idéal pour clarifier le présent et préparer le futur.</p>
+        <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:14px" class="text">
+          « Une guidance qui apaise et motive à la fois — des réponses précises, sans être rigides. »
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="band">Transparence & respect — La voyance n’est pas un avis médical, juridique ou financier.</div>
+
+  <footer>
+    <div class="container footer-columns">
+      <div class="footer-column">
+        <h3>Contacts</h3>
+        <ul>
+          <li>📞 +33 6 70 36 61 00</li>
+          <li>✉️ studio.komorai@gmail.com</li>
+          <li>🏛️ SIREN : 991665555</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Réseaux sociaux</h3>
+        <ul>
+          <li><a href="#">Instagram</a>komorai_</li>
+          <li><a href="#">Facebook</a>komoraï</li>
+          <li><a href="#">WhatsApp</a>Contact direct</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="cartes-pendule.html">Cartes & Pendule</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© Komoraï Voyance — 2025. Tous droits réservés.</div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

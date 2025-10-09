@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Komoraï Voyance — Tarifs</title>
+  <meta name="description" content="Tarifs des séances : cartes (1h), pendule, et pack cartes + pendule. Réservations Komoraï Voyance."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='white'/%3E%3Ctext x='32' y='39' font-size='22' text-anchor='middle' font-family='Playfair Display' fill='black'%3EKV%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{--bg:#000;--ink:#fff;--muted:#d8d8d8;--line:rgba(255,255,255,.14);--card:#0b0b0b;--radius:22px}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--ink);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+
+    /* ===== ENTÊTE — IDENTIQUE ACCUEIL ===== */
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:150px;display:block}
+    .brand-name{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.6px;font-size:1.25rem}
+    nav a{margin-left:14px;padding:10px 14px;border-radius:999px;border:1px solid transparent}
+    nav a.active{background:#fff;color:#000}
+    nav a:not(.active):hover{background:rgba(255,255,255,.08)}
+
+    /* ===== CONTENU TARIFS ===== */
+    .hero{position:relative;min-height:46vh;display:grid;place-items:center;text-align:center;overflow:hidden}
+    .hero-inner{padding:36px 20px}
+    h1{font-family:'Playfair Display',serif;font-size:2.8rem;line-height:1.1;margin:0 0 12px}
+    .lead{max-width:820px;margin:0 auto;color:var(--muted);font-size:1.12rem;line-height:1.7}
+    .grid{display:grid;gap:22px}
+    .prices{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+    .price{font-size:2rem;font-weight:700;margin:10px 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:#000;border:1px solid #fff;border-radius:999px;padding:10px 18px;font-weight:600}
+    .btn.ghost{background:transparent;color:#fff;border-color:var(--line)}
+    .note{color:#cfcfcf;font-size:.95rem}
+
+    /* ===== RÉVÉLATION AU SCROLL ===== */
+    .reveal{opacity:0;transform:translateY(14px)}
+    .reveal.show{opacity:1;transform:none;transition:opacity .55s ease, transform .55s ease}
+
+    /* ===== FOOTER — IDENTIQUE ACCUEIL ===== */
+    footer{border-top:1px solid var(--line);background:rgba(0,0,0,.78)}
+    .footer-columns{display:flex;justify-content:space-between;gap:40px;flex-wrap:nowrap}
+    .footer-column{flex:1 1 0;min-width:220px}
+    footer h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9c9c9;margin:0}
+    footer ul{list-style:none;margin:10px 0 0;padding:0}
+    footer li{margin:8px 0;color:#eaeaea}
+    .footer-bottom{border-top:1px solid var(--line);text-align:center;color:#9a9a9a;font-size:12px;padding:14px 0}
+
+    @media (max-width: 900px){
+      .prices{grid-template-columns:1fr}
+      h1{font-size:2.2rem}
+      .footer-columns{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== ENTÊTE (copié-collé de l'accueil) ===== -->
+  <header>
+    <div class="container row">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/Komoraï.svg" alt="Logo Komoraï Voyance">
+        </a>
+      </div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="cartes-pendule.html">Cartes & Pendule</a>
+        <a href="tarifs.html" class="active">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HÉROS TARIFS ===== -->
+  <section class="hero">
+    <div class="hero-inner reveal">
+      <div class="kicker" style="letter-spacing:.18em;text-transform:uppercase;color:#cfcfcf;font-size:12px">Transparence</div>
+      <h1>Des tarifs simples & clairs</h1>
+      <p class="lead">Trois formules pensées pour s’adapter à votre besoin du moment. La qualité d’écoute et la précision restent les mêmes, quel que soit le format choisi.</p>
+    </div>
+  </section>
+
+  <!-- ===== CARTES TARIFS ===== -->
+  <section class="container" style="padding:32px 24px 12px">
+    <div class="grid prices reveal">
+      <div class="card">
+        <h3 class="title" style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:0">Séance cartes (1h)</h3>
+        <p class="note">Tirage complet avec l’Oracle de Gé (et autres jeux selon besoin).</p>
+        <div class="price">45 €</div>
+        <a class="btn" href="contact.html">Réserver</a>
+      </div>
+      <div class="card">
+        <h3 class="title" style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:0">Séance pendule</h3>
+        <p class="note">Questions cadrées (oui/non/tendance), affinement de vos choix.</p>
+        <div class="price">20 €</div>
+        <a class="btn" href="contact.html">Réserver</a>
+      </div>
+      <div class="card">
+        <h3 class="title" style="font-family:'Playfair Display',serif;font-size:1.6rem;margin:0">Cartes + pendule</h3>
+        <p class="note">Vision globale + vérifications précises pour sécuriser une décision.</p>
+        <div class="price">55 €</div>
+        <a class="btn" href="contact.html">Réserver</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFOS COMPLÉMENTAIRES ===== -->
+  <section class="container" style="padding:12px 24px 48px">
+    <div class="grid reveal" style="grid-template-columns:1fr 1fr;gap:22px">
+      <div class="card">
+        <h3 class="title">Déroulé d’une séance</h3>
+        <ul class="list" style="color:#e8e8e8;line-height:1.8;padding-left:18px">
+          <li>Échange initial pour cadrer <strong>la question</strong> et le <strong>contexte</strong></li>
+          <li>Tirage (<strong>Oracle de Gé</strong> + autres jeux si utile)</li>
+          <li>Si besoin : <strong>pendule</strong> pour valider une option</li>
+          <li>Conclusion avec <strong>pistes actionnables</strong> et étapes concrètes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="title">Déontologie</h3>
+        <p class="note">La voyance propose des pistes, jamais de promesses irréalistes. Elle ne remplace pas un avis médical, juridique ou financier. Les échanges sont confidentiels et respectueux de votre <strong>libre arbitre</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (copié-collé de l'accueil) ===== -->
+  <footer>
+    <div class="container footer-columns">
+      <div class="footer-column">
+        <h3>Contacts</h3>
+        <ul>
+          <li>📞 +33 6 70 36 61 00</li>
+          <li>✉️ studio.komorai@gmail.com</li>
+          <li>🏛️ SIREN : 991665555</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Réseaux</h3>
+        <ul>
+          <li>Instagram — <a href="#" target="_blank" rel="noreferrer">@komorai_</a></li>
+          <li>Facebook — <a href="#" target="_blank" rel="noreferrer">/Komoraï</a></li>
+          <li>WhatsApp — <a href="#" target="_blank" rel="noreferrer">Contact direct</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="cartes-pendule.html">Cartes & Pendule</a></li>
+          <li><a href="tarifs.html" class="active">Tarifs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© Komoraï Voyance — 2025. Tous droits réservés.</div>
+  </footer>
+
+  <script>
+    // Révélations au scroll (identique à l'accueil)
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

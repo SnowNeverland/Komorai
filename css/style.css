@@ -1,0 +1,9 @@
+footer .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+  @media (max-width: 768px) {
+    footer .footer-columns { grid-template-columns: 1fr; }
+  }
+  
