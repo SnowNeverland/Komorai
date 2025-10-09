@@ -20,10 +20,34 @@
     .row{display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:150px;display:block}
-    .brand-name{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.6px;font-size:1.25rem}
     nav a{margin-left:14px;padding:10px 14px;border-radius:999px;border:1px solid transparent}
     nav a.active{background:#fff;color:#000}
     nav a:not(.active):hover{background:rgba(255,255,255,.08)}
+
+    /* ===== MENU RESPONSIVE (ajout) ===== */
+    .hamburger{display:none;font-size:28px;cursor:pointer;user-select:none;color:#fff}
+    @media (max-width: 768px){
+      .hamburger{display:block}
+      nav{
+        display:none;
+        position:absolute;
+        top:72px; right:24px;
+        background:rgba(0,0,0,.9);
+        border:1px solid var(--line);
+        border-radius:var(--radius);
+        padding:14px 18px;
+        flex-direction:column;
+        gap:12px;
+        box-shadow:0 4px 14px rgba(0,0,0,.5);
+        z-index:999;
+      }
+      nav.show{display:flex}
+      nav a{
+        display:block;width:100%;padding:10px 0;margin-left:0;
+        border-bottom:1px solid rgba(255,255,255,.1);
+      }
+      nav a:last-child{border-bottom:none}
+    }
 
     /* ===== CONTENU TARIFS ===== */
     .hero{position:relative;min-height:46vh;display:grid;place-items:center;text-align:center;overflow:hidden}
@@ -59,7 +83,7 @@
   </style>
 </head>
 <body>
-  <!-- ===== ENTÊTE (copié-collé de l'accueil) ===== -->
+  <!-- ===== ENTÊTE ===== -->
   <header>
     <div class="container row">
       <div class="brand">
@@ -67,7 +91,11 @@
           <img src="images/Komoraï.svg" alt="Logo Komoraï Voyance">
         </a>
       </div>
-      <nav>
+
+      <!-- Bouton hamburger (uniquement en petit écran) -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <nav id="nav">
         <a href="index.html">Accueil</a>
         <a href="cartes-pendule.html">Cartes & Pendule</a>
         <a href="tarifs.html" class="active">Tarifs</a>
@@ -128,7 +156,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER (copié-collé de l'accueil) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container footer-columns">
       <div class="footer-column">
@@ -142,8 +170,8 @@
       <div class="footer-column">
         <h3>Réseaux</h3>
         <ul>
-          <li>Instagram — <a href="#" target="_blank" rel="noreferrer">@komorai_</a></li>
-          <li>Facebook — <a href="#" target="_blank" rel="noreferrer">/Komoraï</a></li>
+          <li>Instagram — <a href="https://www.instagram.com/komorai_?igsh=MXN4ZTUzd2d6djlnZg==" target="_blank" rel="noreferrer">@komorai_</a></li>
+          <li>Facebook — <a href="https://www.facebook.com/share/1Ab636pRdb/" target="_blank" rel="noreferrer">/Komoraï</a></li>
           <li>WhatsApp — <a href="#" target="_blank" rel="noreferrer">Contact direct</a></li>
         </ul>
       </div>
@@ -161,6 +189,9 @@
   </footer>
 
   <script>
+    // Menu mobile
+    function toggleMenu(){ document.getElementById('nav').classList.toggle('show'); }
+
     // Révélations au scroll (identique à l'accueil)
     const obs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
